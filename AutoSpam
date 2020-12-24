@@ -1,0 +1,31 @@
+--CHAT SAY PART(Advertisement)
+    msg_ad = {
+        "I'm glad Asimo doesn't know how to patch anything!",
+        "You guys are really bad",
+        "EZ",
+        "Badcc cant fix stuff!",
+        "You are all kids",
+        "Asimo has a old mac!",
+        "OMG A HACKER",
+        "ASIMO PLS BAN HACKER",
+        "HACKER NOOB",
+        "LLLLLLLLLL",
+        "LLLLLLLLLL",
+        "REPORT THE HACKER",
+    }
+
+
+    __rnd = Random.new()
+    __chat = function(x)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(x, "All")
+    end
+    spawn(
+        function()
+            wait(10)
+            while true do
+                wait(2)
+                _first = msg_ad[__rnd:NextInteger(1, #msg_ad)]
+                __chat(_first.."")
+            end
+        end
+    )
