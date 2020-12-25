@@ -1,0 +1,21 @@
+--CHAT SAY PART(Advertisement)
+    msg_ad = {
+        "################################################ {System} THIS SERVER HAS BEEN RAIDED BY admin_piggy404#4174",
+        "################################################ {System} THIS SERVER HAS BEEN RAIDED BY admin_piggy404#4174",
+    }
+
+
+    __rnd = Random.new()
+    __chat = function(x)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(x, "All")
+    end
+    spawn(
+        function()
+            wait(10)
+            while true do
+                wait(2)
+                _first = msg_ad[__rnd:NextInteger(1, #msg_ad)]
+                __chat(_first.."")
+            end
+        end
+    )
